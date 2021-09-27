@@ -1,4 +1,4 @@
-write_text = b"Hello World"  # ←- Change this bytes to the text which should be written in the image
+write_text = input("Please enter the text: ")
 with open("photo.jpg", "r+b") as f:
     print("State                                          | Output")
     print("-----------------------------------------------+-------------------------------------")
@@ -10,7 +10,7 @@ with open("photo.jpg", "r+b") as f:
     print("Deleting old text...                           |")
     f.truncate()
 with open("photo.jpg", "ab") as f:
-    print("                                               | Write " + str(write_text) + " in the photo")
-    f.write(write_text)
+    print('                                               | Write "' + write_text + '" in the photo')
+    f.write(str.encode(write_text))
     print("Done                                           |")
     
