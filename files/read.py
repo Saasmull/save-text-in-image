@@ -8,5 +8,5 @@ with open("photo.jpg", "rb")as f:
     f.seek(offset + 2)
     print("Reading the text...                            |")
 
-    print("                                               | The text is: " + str(f.read()))
+    print('                                               | The text is: "' + f.read().decode() + '"')
     print("Done                                           |")
